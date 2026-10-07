@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Campus IoT Dashboard — Classroom Node B-204</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-wrap">
+    <header class="dash-header">
+      <div class="header-title">
+        <span class="prototype-badge">Student Prototype</span>
+        <h1>Smart Campus Classroom Telemetry Dashboard</h1>
+        <p>Location: Dept of Computer Science &amp; Engineering &bull; Node: ESP32-CSE-B204</p>
+      </div>
+      <div class="header-controls">
+        <span class="live-indicator"><span class="dot"></span> Online Telemetry</span>
+        <button id="simToggleBtn" class="btn">Toggle Simulated Feed</button>
+      </div>
+    </header>
+
+    <main class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Classroom Temperature</div>
+        <div class="metric-value" id="tempVal">24.5 °C</div>
+        <div class="metric-sub text-green">Optimal comfort range (22°C - 26°C)</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Ambient Humidity</div>
+        <div class="metric-value" id="humVal">52.0 %</div>
+        <div class="metric-sub text-blue">Standard air circulation</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Room Occupancy</div>
+        <div class="metric-value" id="occVal">28 Students</div>
+        <div class="metric-sub">Ultrasonic doorway entry tracking</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Ambient Light Level</div>
+        <div class="metric-value" id="lightVal">680 Lux</div>
+        <div class="metric-sub text-green">Natural lighting adequate</div>
+      </div>
+    </main>
+
+    <section class="energy-panel">
+      <h2>⚡ Automation &amp; Energy Management State</h2>
+      <div class="state-row">
+        <div class="state-item">
+          <span>HVAC / Air Handling:</span>
+          <strong id="hvacStatus" class="status-on">AUTOMATED ACTIVE (24°C)</strong>
+        </div>
+        <div class="state-item">
+          <span>Classroom Lighting:</span>
+          <strong id="lightsStatus" class="status-on">DIMMED (Natural Sunlight &gt; 500 Lux)</strong>
+        </div>
+        <div class="state-item">
+          <span>Node Telemetry Ping:</span>
+          <strong class="status-mono">HTTP JSON 200 OK (every 2.5s)</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer class="dash-footer">
+      <p>Smart Campus IoT Prototype &bull; Developed by <a href="https://github.com/bhavishya0922">Bhavishya Dewangan</a> &bull; B.Tech CSE (3rd Semester)</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
